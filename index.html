@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full" data-page="/plugins/highlight-keywords/">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>myTrackers</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="./styles.css">
+
+</head>
+
+<body class="h-auto w-full bg-white text-[#333] p-6">
+
+  <nav class="fixed top-0 left-0 w-full px-6 h-20 bg-white flex items-center justify-between text-sm font-bold uppercase tracking-widest z-20">
+    <div class="entryLinks">
+      <a href="#" class="siteLinks p-2 rounded-lg ease-in-out duration-300 transition-all bg-[#333] text-white">Ex</a>
+      <a href="#" class="siteLinks p-2 rounded-lg ease-in-out duration-300 transition-all">Hb</a>
+    </div>
+    <a href="./summary.html" class="siteLinks p-2 rounded-lg ease-in-out duration-300 transition-all">Sr</a>
+  </nav>
+
+  <div class="content mt-16 pb-16">
+
+    <div class="newExpenseWrapper text-sm rounded-lg border border-slate-300">
+
+      <h1 class="font-bold uppercase p-3 bg-[#333] text-white flex items-center justify-between text-sm rounded-t-lg">
+        <span>New Expense</span>
+      </h1>
+
+      <div class="newExpenseForm dropdownChild px-3 py-6 flex flex-col gap-y-6">
+
+        <input type="text" class="formField rounded-lg bg-slate-200 border-transparent p-2 text-sm placeholder:text-xs placeholder:uppercase placeholder:text-[#333] font-bold w-full" data-field="detail" placeholder="Details">
+
+        <div class="amountAndTag flex items-center gap-x-3">
+
+          <input type="number" class="formField rounded-lg bg-slate-200 border-transparent p-2 text-sm placeholder:text-xs placeholder:uppercase placeholder:text-[#333] font-bold w-full" data-field="amount" placeholder="Amount">
+
+          <div class="dropdownParent relative flex items-center justify-between w-full font-bold uppercase bg-slate-200 p-2 rounded-lg text-xs">
+            <span class="dropdownSelected formField">Tag</span>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="arrow size-5 ease-in-out duration-300 transition-all rounded-full p-1 bg-white text-[#333]">
+              <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+            </svg>
+
+            <div class="dropdownList bg-slate-200 absolute hidden h-fit max-h-56 z-20 top-full right-0 rounded-lg p-3 font-bold mt-2 w-full flex flex-col gap-y-3 overflow-x-hidden overflow-y-auto hideScroller">
+
+              <div class="dropdownItem bg-white rounded-lg w-full p-2 flex items-center gap-x-2">
+                <span class="w-4 itemIcon"> <i class="fa-solid fa-pizza-slice"></i></span>
+                <span class="itemName" data-field="takeOut">Take Outs</span>
+              </div>
+
+              <div class="dropdownItem bg-white rounded-lg w-full p-2 flex items-center gap-x-2">
+                <span class="w-4"> <i class="fa-solid fa-leaf"></i></span>
+                <span class="itemName" data-field="groceries">Groceries</span>
+              </div>
+
+              <div class="dropdownItem bg-white rounded-lg w-full p-2 flex items-center gap-x-2">
+                <span class="w-4"><i class="fa-solid fa-file-invoice"></i></span>
+                <span class="itemName" data-field="bills">Bills</span>
+              </div>
+
+              <div class="dropdownItem bg-white rounded-lg w-full p-2 flex items-center gap-x-2">
+                <span class="w-4"> <i class="fa-solid fa-basket-shopping"></i></span>
+                <span class="itemName" data-field="shopping">Shopping</span>
+              </div>
+
+              <div class="dropdownItem bg-white rounded-lg w-full p-2 flex items-center gap-x-2">
+                <span class="w-4"> <i class="fa-solid fa-wallet"></i></span>
+                <span class="itemName" data-field="savings">Savings</span>
+              </div>
+
+              <div class="dropdownItem bg-white rounded-lg w-full p-2 flex items-center gap-x-2">
+                <span class="w-4"> <i class="fa-solid fa-car"></i></span>
+                <span class="itemName">Car</span>
+              </div>
+
+              <div class="dropdownItem bg-white rounded-lg w-full p-2 flex items-center gap-x-2">
+                <span class="w-4"> <i class="fa-solid fa-circle-question"></i></span>
+                <span class="itemName">Misc</span>
+              </div>
+
+              <div class="dropdownItem bg-white rounded-lg w-full p-2 flex items-center gap-x-2">
+                <span class="w-4"> <i class="fa-solid fa-money-bill-trend-up"></i></span>
+                <span class="itemName">Markets</span>
+              </div>
+
+              <div class="dropdownItem bg-white rounded-lg w-full p-2 flex items-center gap-x-2">
+                <span class="w-4"> <i class="fa-solid fa-file-contract"></i></span>
+                <span class="itemName">Policy</span>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="addExpenseButton bg-[#333] rounded-lg p-2 text-center uppercase text-white font-bold tracking-wider">Add</div>
+
+      </div>
+
+    </div>
+
+    <div class="expenseSummary mt-8">
+
+      <header class="font-bold uppercase flex items-center justify-between">
+        <div class="text-sm">Expense Summary</div>
+        <div class="dropdownParent relative flex items-center justify-between w-1/3 font-bold uppercase bg-slate-200 p-2 rounded-lg text-xs">
+          <span class="dropdownSelected formField">Jun</span>
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="arrow size-5 ease-in-out duration-300 transition-all rounded-full p-1 bg-white text-[#333]">
+            <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+          </svg>
+
+          <div class="dropdownList bg-slate-200 absolute hidden h-fit max-h-56 z-20 top-full right-0 rounded-lg p-3 font-bold mt-2 w-full flex flex-col gap-y-3 overflow-x-hidden overflow-y-auto hideScroller">
+
+            <div class="dropdownItem bg-white rounded-lg w-full p-2 flex items-center gap-x-2">
+              <span class="w-4 itemIcon"> <i class="fa-solid fa-pizza-slice"></i></span>
+              <span class="itemName" data-field="takeOut">Take Outs</span>
+            </div>
+
+            <div class="dropdownItem bg-white rounded-lg w-full p-2 flex items-center gap-x-2">
+              <span class="w-4"> <i class="fa-solid fa-leaf"></i></span>
+              <span class="itemName" data-field="groceries">Groceries</span>
+            </div>
+
+            <div class="dropdownItem bg-white rounded-lg w-full p-2 flex items-center gap-x-2">
+              <span class="w-4"><i class="fa-solid fa-file-invoice"></i></span>
+              <span class="itemName" data-field="bills">Bills</span>
+            </div>
+
+            <div class="dropdownItem bg-white rounded-lg w-full p-2 flex items-center gap-x-2">
+              <span class="w-4"> <i class="fa-solid fa-basket-shopping"></i></span>
+              <span class="itemName" data-field="shopping">Shopping</span>
+            </div>
+
+            <div class="dropdownItem bg-white rounded-lg w-full p-2 flex items-center gap-x-2">
+              <span class="w-4"> <i class="fa-solid fa-wallet"></i></span>
+              <span class="itemName" data-field="savings">Savings</span>
+            </div>
+
+            <div class="dropdownItem bg-white rounded-lg w-full p-2 flex items-center gap-x-2">
+              <span class="w-4"> <i class="fa-solid fa-car"></i></span>
+              <span class="itemName">Car</span>
+            </div>
+
+            <div class="dropdownItem bg-white rounded-lg w-full p-2 flex items-center gap-x-2">
+              <span class="w-4"> <i class="fa-solid fa-circle-question"></i></span>
+              <span class="itemName">Misc</span>
+            </div>
+
+            <div class="dropdownItem bg-white rounded-lg w-full p-2 flex items-center gap-x-2">
+              <span class="w-4"> <i class="fa-solid fa-money-bill-trend-up"></i></span>
+              <span class="itemName">Markets</span>
+            </div>
+
+            <div class="dropdownItem bg-white rounded-lg w-full p-2 flex items-center gap-x-2">
+              <span class="w-4"> <i class="fa-solid fa-file-contract"></i></span>
+              <span class="itemName">Policy</span>
+            </div>
+
+          </div>
+
+        </div>
+      </header>
+
+      <!-- High Spending List  -->
+      <div class="mostSpentWrapper mt-8 w-full rounded-lg overflow-hidden border border-slate-300">
+        <div class="bg-[#333] text-white text-sm font-bold uppercase p-3">
+          <span>Most Spent</span>
+          (<span class="spentCount">3</span>)
+        </div>
+
+        <div class="spentDetailsWrapper p-3 font-bold overflow-x-hidden overflow-y-auto h-fit max-h-32 hideScroller flex flex-col gap-y-3">
+
+          <div class="spentDetails text-sm flex items-center justify-between bg-slate-200 p-3 rounded-lg">
+            <div class="flex flex-col">
+              <span class="spentAmount">2600</span>
+              <span class="spentName">Dominos</span>
+            </div>
+            <div class="flex flex-col text-xs">
+              <span class="spentTime">23-06-2025, 15:10</span>
+              <div class="spentTag uppercase text-right">
+                <span class="w-4 itemIcon"> <i class="fa-solid fa-pizza-slice"></i></span>
+                <span class="itemName" data-field="takeOut">Take Outs</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="spentDetails text-sm flex items-center justify-between bg-slate-200 p-3 rounded-lg">
+            <div class="flex flex-col">
+              <span class="spentAmount">2600</span>
+              <span class="spentName">Dominos</span>
+            </div>
+            <div class="flex flex-col text-xs">
+              <span class="spentTime">23-06-2025, 15:10</span>
+              <div class="spentTag uppercase text-right">
+                <span class="w-4 itemIcon"> <i class="fa-solid fa-pizza-slice"></i></span>
+                <span class="itemName" data-field="takeOut">Take Outs</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="spentDetails text-sm flex items-center justify-between bg-slate-200 p-3 rounded-lg">
+            <div class="flex flex-col">
+              <span class="spentAmount">2600</span>
+              <span class="spentName">Dominos</span>
+            </div>
+            <div class="flex flex-col text-xs">
+              <span class="spentTime">23-06-2025, 15:10</span>
+              <div class="spentTag uppercase text-right">
+                <span class="w-4 itemIcon"> <i class="fa-solid fa-pizza-slice"></i></span>
+                <span class="itemName" data-field="takeOut">Take Outs</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Expense by Tags  -->
+      <div class="expenseBreakdown mt-8">
+
+        <div class="expenseCategory grid grid-cols-2 gap-6">
+
+          <div class="categoryHead h-20 flex flex-col justify-between text-slate-200 bg-indigo-600 p-3 rounded-lg text-xs uppercase font-bold">
+            <div class="flex items-center gap-x-1">
+              <span class="w-4 itemIcon"> <i class="fa-solid fa-pizza-slice"></i></span>
+              <span class="itemName" data-field="takeOut">Take Outs</span>
+            </div>
+            <div class="flex items-center justify-between">
+              <div class="total text-lg">8450.54</div>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-5">
+                <path fill-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25Zm4.28 10.28a.75.75 0 0 0 0-1.06l-3-3a.75.75 0 1 0-1.06 1.06l1.72 1.72H8.25a.75.75 0 0 0 0 1.5h5.69l-1.72 1.72a.75.75 0 1 0 1.06 1.06l3-3Z" clip-rule="evenodd" />
+              </svg>
+            </div>
+          </div>
+
+          <div class="categoryHead h-20 flex flex-col justify-between text-slate-200 bg-emerald-600 p-3 rounded-lg text-xs uppercase font-bold">
+            <div class="flex items-center gap-x-1">
+              <span class="w-4"> <i class="fa-solid fa-leaf"></i></span>
+              <span class="itemName" data-field="groceries">Groceries</span>
+            </div>
+            <div class="flex items-center justify-between">
+              <div class="total text-lg">3100</div>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-5">
+                <path fill-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25Zm4.28 10.28a.75.75 0 0 0 0-1.06l-3-3a.75.75 0 1 0-1.06 1.06l1.72 1.72H8.25a.75.75 0 0 0 0 1.5h5.69l-1.72 1.72a.75.75 0 1 0 1.06 1.06l3-3Z" clip-rule="evenodd" />
+              </svg>
+            </div>
+          </div>
+
+          <div class="categoryHead h-20 flex flex-col justify-between text-slate-200 bg-orange-600 p-3 rounded-lg text-xs uppercase font-bold">
+            <div class="flex items-center gap-x-1">
+              <span class="w-4"><i class="fa-solid fa-file-invoice"></i></span>
+              <span class="itemName" data-field="bills">Bills</span>
+            </div>
+            <div class="flex items-center justify-between">
+              <div class="total text-lg">2150</div>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-5">
+                <path fill-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25Zm4.28 10.28a.75.75 0 0 0 0-1.06l-3-3a.75.75 0 1 0-1.06 1.06l1.72 1.72H8.25a.75.75 0 0 0 0 1.5h5.69l-1.72 1.72a.75.75 0 1 0 1.06 1.06l3-3Z" clip-rule="evenodd" />
+              </svg>
+            </div>
+          </div>
+
+          <div class="categoryHead h-20 flex flex-col justify-between text-slate-200 bg-amber-600 p-3 rounded-lg text-xs uppercase font-bold">
+            <div class="flex items-center gap-x-1">
+              <span class="w-4"> <i class="fa-solid fa-basket-shopping"></i></span>
+              <span class="itemName" data-field="shopping">Shopping</span>
+            </div>
+            <div class="flex items-center justify-between">
+              <div class="total text-lg">800</div>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-5">
+                <path fill-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25Zm4.28 10.28a.75.75 0 0 0 0-1.06l-3-3a.75.75 0 1 0-1.06 1.06l1.72 1.72H8.25a.75.75 0 0 0 0 1.5h5.69l-1.72 1.72a.75.75 0 1 0 1.06 1.06l3-3Z" clip-rule="evenodd" />
+              </svg>
+            </div>
+          </div>
+
+          <div class="categoryHead h-20 flex flex-col justify-between text-slate-200 bg-lime-600 p-3 rounded-lg text-xs uppercase font-bold">
+            <div class="flex items-center gap-x-1">
+              <span class="w-4"> <i class="fa-solid fa-wallet"></i></span>
+              <span class="itemName" data-field="savings">Savings</span>
+            </div>
+            <div class="flex items-center justify-between">
+              <div class="total text-lg">21500</div>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-5">
+                <path fill-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25Zm4.28 10.28a.75.75 0 0 0 0-1.06l-3-3a.75.75 0 1 0-1.06 1.06l1.72 1.72H8.25a.75.75 0 0 0 0 1.5h5.69l-1.72 1.72a.75.75 0 1 0 1.06 1.06l3-3Z" clip-rule="evenodd" />
+              </svg>
+            </div>
+          </div>
+
+          <div class="categoryHead h-20 flex flex-col justify-between text-slate-200 bg-teal-600 p-3 rounded-lg text-xs uppercase font-bold">
+            <div class="flex items-center gap-x-1">
+              <span class="w-4"> <i class="fa-solid fa-car"></i></span>
+              <span class="itemName">Car</span>
+            </div>
+            <div class="flex items-center justify-between">
+              <div class="total text-lg">1200</div>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-5">
+                <path fill-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25Zm4.28 10.28a.75.75 0 0 0 0-1.06l-3-3a.75.75 0 1 0-1.06 1.06l1.72 1.72H8.25a.75.75 0 0 0 0 1.5h5.69l-1.72 1.72a.75.75 0 1 0 1.06 1.06l3-3Z" clip-rule="evenodd" />
+              </svg>
+            </div>
+          </div>
+
+          <div class="categoryHead h-20 flex flex-col justify-between text-slate-200 bg-black p-3 rounded-lg text-xs uppercase font-bold">
+            <div class="flex items-center gap-x-1">
+              <span class="w-4"> <i class="fa-solid fa-circle-question"></i></span>
+              <span class="itemName">Misc</span>
+            </div>
+            <div class="flex items-center justify-between">
+              <div class="total text-lg">14999</div>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-5">
+                <path fill-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25Zm4.28 10.28a.75.75 0 0 0 0-1.06l-3-3a.75.75 0 1 0-1.06 1.06l1.72 1.72H8.25a.75.75 0 0 0 0 1.5h5.69l-1.72 1.72a.75.75 0 1 0 1.06 1.06l3-3Z" clip-rule="evenodd" />
+              </svg>
+            </div>
+          </div>
+
+          <div class="categoryHead h-20 flex flex-col justify-between text-slate-200 bg-purple-600 p-3 rounded-lg text-xs uppercase font-bold">
+            <div class="flex items-center gap-x-1">
+              <span class="w-4"> <i class="fa-solid fa-money-bill-trend-up"></i></span>
+              <span class="itemName">Markets</span>
+            </div>
+            <div class="flex items-center justify-between">
+              <div class="total text-lg">48500</div>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-5">
+                <path fill-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25Zm4.28 10.28a.75.75 0 0 0 0-1.06l-3-3a.75.75 0 1 0-1.06 1.06l1.72 1.72H8.25a.75.75 0 0 0 0 1.5h5.69l-1.72 1.72a.75.75 0 1 0 1.06 1.06l3-3Z" clip-rule="evenodd" />
+              </svg>
+            </div>
+          </div>
+
+          <div class="categoryHead h-20 flex flex-col justify-between text-slate-200 bg-pink-600 p-3 rounded-lg text-xs uppercase font-bold">
+            <div class="flex items-center gap-x-1">
+              <span class="w-4"> <i class="fa-solid fa-file-contract"></i></span>
+              <span class="itemName">Policy</span>
+            </div>
+            <div class="flex items-center justify-between">
+              <div class="total text-lg">35000</div>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-5">
+                <path fill-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25Zm4.28 10.28a.75.75 0 0 0 0-1.06l-3-3a.75.75 0 1 0-1.06 1.06l1.72 1.72H8.25a.75.75 0 0 0 0 1.5h5.69l-1.72 1.72a.75.75 0 1 0 1.06 1.06l3-3Z" clip-rule="evenodd" />
+              </svg>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <script src="./index.js"></script>
+
+</body>
+
+</html>
