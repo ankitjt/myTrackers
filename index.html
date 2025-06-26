@@ -21,12 +21,12 @@
     Adding Expense.
   </div>
 
-  <nav class="fixed top-0 left-0 w-full px-6 h-20 bg-white flex items-center justify-between text-sm font-bold uppercase tracking-widest z-20">
-    <div class="entryLinks">
-      <a href="#" class="siteLinks p-2 rounded-lg ease-in-out duration-300 transition-all bg-[#333] text-white">Ex</a>
-      <a href="#" class="siteLinks p-2 rounded-lg ease-in-out duration-300 transition-all">Hb</a>
+  <nav class="fixed top-0 left-0 w-full p-6 h-20 bg-white text-sm font-bold uppercase tracking-widest z-20">
+    <div class="entryLinks flex items-center justify-center gap-x-3">
+      <a href="#" class="siteLinks ease-in-out duration-300 transition-all border-b-4 mt-1 border-double border-b-[#333] border-transparent">Expenses</a>
+      <span>/</span>
+      <a href="#" class="siteLinks ease-in-out duration-300 transition-all border-4 border-double border-transparent">Habits</a>
     </div>
-    <a href="./summary.html" class="siteLinks p-2 rounded-lg ease-in-out duration-300 transition-all">Sr</a>
   </nav>
 
   <div class="content mt-16 pb-16">
@@ -105,12 +105,34 @@
 
         </div>
 
-        <div class="addExpenseButton bg-[#333] rounded-lg p-2 text-center uppercase text-white font-bold tracking-wider flex items-center justify-center gap-x-1 w-24 mx-auto">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-5 text-white">
-            <path fill-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25ZM12.75 9a.75.75 0 0 0-1.5 0v2.25H9a.75.75 0 0 0 0 1.5h2.25V15a.75.75 0 0 0 1.5 0v-2.25H15a.75.75 0 0 0 0-1.5h-2.25V9Z" clip-rule="evenodd" />
-          </svg>
+        <div class="addExpenseButton relative text-center uppercase text-white font-bold tracking-wider flex items-center justify-center gap-x-1 w-full mx-auto">
 
-          <span>Add</span>
+          <div class="onLoad bg-[#333] rounded-lg p-3 h-full w-full flex items-center justify-center gap-x-3 ease-in-out duration-300 transition-all opacity-100">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
+              <path fill-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25ZM12.75 9a.75.75 0 0 0-1.5 0v2.25H9a.75.75 0 0 0 0 1.5h2.25V15a.75.75 0 0 0 1.5 0v-2.25H15a.75.75 0 0 0 0-1.5h-2.25V9Z" clip-rule="evenodd" />
+            </svg>
+            <span>Add Expense</span>
+          </div>
+          <div class="sendingData bg-[#444] rounded-lg p-3 h-full w-full absolute opacity-0 pointer-events-none flex items-center justify-center gap-x-3 ease-in-out duration-300 transition-all">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6 animate-bounce">
+              <path fill-rule="evenodd" d="M11.47 7.72a.75.75 0 0 1 1.06 0l7.5 7.5a.75.75 0 1 1-1.06 1.06L12 9.31l-6.97 6.97a.75.75 0 0 1-1.06-1.06l7.5-7.5Z" clip-rule="evenodd" />
+            </svg>
+            <span>Sending Data</span>
+          </div>
+          <div class="confirmation bg-emerald-600 text-white rounded-lg p-3 h-full w-full absolute opacity-0 pointer-events-none flex items-center justify-center gap-x-3 ease-in-out duration-300 transition-all">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6 ">
+              <path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm13.36-1.814a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z" clip-rule="evenodd" />
+            </svg>
+            <span>Data added</span>
+          </div>
+          <div class="error bg-rose-600 rounded-lg p-3 h-full w-full absolute opacity-0 pointer-events-none flex items-center justify-center gap-x-3 ease-in-out duration-300 transition-all">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6 ">
+              <path fill-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25Zm-1.72 6.97a.75.75 0 1 0-1.06 1.06L10.94 12l-1.72 1.72a.75.75 0 1 0 1.06 1.06L12 13.06l1.72 1.72a.75.75 0 1 0 1.06-1.06L13.06 12l1.72-1.72a.75.75 0 1 0-1.06-1.06L12 10.94l-1.72-1.72Z" clip-rule="evenodd" />
+            </svg>
+
+            <span>Request failed.</span>
+          </div>
+
         </div>
 
       </div>
