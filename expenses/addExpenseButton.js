@@ -32,7 +32,7 @@ addExpenseButton.addEventListener("click", () => {
   // Validation checks.
   formFields.forEach(field => {
     const parent = field.closest(".dropdownParent")
-    if ([ "text", "number" ].includes(field.type)) {
+    if ([ "text", "number", "month" ].includes(field.type)) {
       if (!field.value.trim()) {
         field.classList.add(...errorStyles)
         isValid = false
@@ -57,7 +57,7 @@ addExpenseButton.addEventListener("click", () => {
 
     formFields.forEach(field => {
       const parent = field.closest(".dropdownParent")
-      if ([ "text", "number" ].includes(field.type)) {
+      if ([ "text", "number", "month" ].includes(field.type)) {
         expenseData[ field.dataset.field ] = field.value.trim()
       }
       else {
@@ -75,7 +75,7 @@ addExpenseButton.addEventListener("click", () => {
         show(confirmation)
         setTimeout(() => show(onLoad), 2000)
         formFields.forEach(field => {
-          if ([ "text", "number" ].includes(field.type)) {
+          if ([ "text", "number", "month" ].includes(field.type)) {
             field.value = ""
           }
           else {

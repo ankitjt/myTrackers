@@ -145,7 +145,7 @@ categoryHead.forEach(category => {
       if (oldPagination) oldPagination.remove()
 
       const pagination = document.createElement("div")
-      pagination.classList.add("pagination", "flex", "justify-between", "items-center", "p-6", "pb-4", "fixed", "bottom-10", "left-0", "w-full")
+      pagination.classList.add("pagination", "flex", "justify-between", "items-center", "p-6", "pb-4", "fixed", "bottom-4.478v", "left-0", "w-full")
 
       pagination.innerHTML = `
         <button class="prevArrow text-sm font-bold uppercase ${currentPage <= 1 ? "text-slate-400" : ""}" ${currentPage <= 1 ? "disabled" : ""}>Prev</button>
